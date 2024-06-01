@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:simple_books_store/features/home/presentation/views_models/home_view.dart';
 import 'package:simple_books_store/features/splash/presentation/views/widgets/animation_splash_widgets.dart';
 
@@ -23,9 +24,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
     // Navigate to the next screen after 2 seconds
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => const HomeView(),
-      ));
+      Get.to(() => const HomeView(),
+          transition: Transition.fade,
+          duration: const Duration(milliseconds: 500));
     });
   }
 
