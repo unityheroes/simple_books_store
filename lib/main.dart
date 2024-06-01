@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:simple_books_store/constants.dart';
 import 'package:simple_books_store/features/splash/presentation/views/splash_view.dart';
 
 void main() {
@@ -11,8 +12,12 @@ class BookStoreApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
-      home: SplashView(),
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: kPrimaryColor,
+      ),
+      home: const SplashView(),
     );
   }
 }
