@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:simple_books_store/constants.dart';
 import 'package:simple_books_store/features/home/presentation/views_models/home_view.dart';
 import 'package:simple_books_store/features/splash/presentation/views/widgets/animation_splash_widgets.dart';
 
@@ -22,12 +23,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     super.initState();
     initAnimation();
 
-    // Navigate to the next screen after 2 seconds
-    Future.delayed(const Duration(seconds: 2), () {
-      Get.to(() => const HomeView(),
-          transition: Transition.fade,
-          duration: const Duration(milliseconds: 500));
-    });
+    navigateToHome();
   }
 
   @override
@@ -62,5 +58,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
         CurvedAnimation(parent: _animationController, curve: Curves.easeInOut));
 
     _animationController.forward();
+  }
+
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(() => const HomeView(),
+          transition: Transition.fade, duration: kTranstionDuration);
+    });
   }
 }
