@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:simple_books_store/constants.dart';
-import 'package:simple_books_store/features/home/presentation/views_models/home_view.dart';
+import 'package:simple_books_store/features/home/presentation/views/home_view.dart';
 import 'package:simple_books_store/features/splash/presentation/views/widgets/animation_splash_widgets.dart';
 
 class SplashViewBody extends StatefulWidget {
