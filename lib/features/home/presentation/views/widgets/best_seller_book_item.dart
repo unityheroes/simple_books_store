@@ -7,8 +7,8 @@ import 'package:simple_books_store/features/home/presentation/views/book_details
 
 import 'package:simple_books_store/features/home/presentation/views/widgets/book_rating.dart';
 
-class BestSellerBookItem extends StatelessWidget {
-  const BestSellerBookItem({super.key});
+class BookItem extends StatelessWidget {
+  const BookItem({super.key});
 
   @override
   Widget build(BuildContext context) {

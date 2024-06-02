@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:simple_books_store/constants.dart';
 import 'package:simple_books_store/core/utils/assets_data.dart';
+import 'package:simple_books_store/features/search/presentation/views/search_view.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
@@ -19,7 +22,10 @@ class CustomAppBar extends StatelessWidget {
           ),
           const Spacer(),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(const SearchView(),
+                    transition: Transition.fade, duration: kTranstionDuration);
+              },
               icon: const Icon(
                 FontAwesomeIcons.magnifyingGlass,
                 size: 28,
