@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simple_books_store/features/home/presentation/views/widgets/book_List_view_item.dart';
+import 'package:simple_books_store/features/home/presentation/views/widgets/book_item_list_view.dart';
 
 class BooksListView extends StatelessWidget {
   const BooksListView({super.key});
@@ -9,13 +9,13 @@ class BooksListView extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.25,
       child: ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
         itemCount: 10,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-              child: BookListViewItem());
+            padding: EdgeInsets.only(right: 16.0),
+            child: BookItemListView(),
+          );
         },
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_books_store/constants.dart';
 import 'package:simple_books_store/features/splash/presentation/views/splash_view.dart';
 
@@ -15,6 +16,7 @@ class BookStoreApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
+        textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
         scaffoldBackgroundColor: kPrimaryColor,
       ),
       home: const SplashView(),
