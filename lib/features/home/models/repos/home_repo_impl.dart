@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
@@ -17,7 +15,7 @@ class HomeRepoImpl implements HomeRepo {
               'volumes?q=programing&Filtering=free-ebooks&Sorting=newest');
 
       List<Book> books = [];
-      for (var item in data["item"]) {
+      for (var item in data["items"]) {
         books.add(Book.fromJson(item));
       }
       return right(books);
@@ -25,13 +23,28 @@ class HomeRepoImpl implements HomeRepo {
       if (e is DioError) {
         return left(ServerFailure(errMessage: e.message));
       } else {
-        return left(ServerFailure(errMessage: 'Opps there an error '));
+        return left(ServerFailure(errMessage: 'Oops, there was an error.'));
       }
     }
   }
 
   @override
-  Future<List<Book>> fetchListBooks() {
-    throw UnimplementedError();
+  Future<Either<Failure, List<Book>>> fetchListBooks() async {
+    try {
+      var data = await ApiServices(Dio()).get(
+          endPoint:
+              'volumes?q=programing&Filtering=free-ebooks&Sorting=newest');
+      List<Book> books = [];
+      for (var item in data["items"]) {
+        books.add(Book.fromJson(item));
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioError) {
+        return left(ServerFailure(errMessage: e.message));
+      } else {
+        return left(ServerFailure(errMessage: 'Oops, there was an error.'));
+      }
+    }
   }
 }
