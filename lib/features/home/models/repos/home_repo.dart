@@ -4,5 +4,5 @@ import 'package:simple_books_store/features/home/models/book/book.model.dart';
 
 abstract class HomeRepo {
   Future<Either<Failure, List<Book>>> fetchNewestBooks();
-  Future<Either<Failure, List<Book>>> fetchListBooks();
+  Future<Either<Failure, List<Book>>> fetchRecomendedBooks();
 }

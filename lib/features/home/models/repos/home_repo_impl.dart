@@ -29,7 +29,7 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<Book>>> fetchListBooks() async {
+  Future<Either<Failure, List<Book>>> fetchRecomendedBooks() async {
     try {
       var data = await ApiServices(Dio()).get(
           endPoint:

@@ -1,4 +1,5 @@
-part of 'recomended_books_cubit.dart';
+import 'package:equatable/equatable.dart';
+import 'package:simple_books_store/features/home/models/book/book.model.dart';
 
 sealed class RecomendedBooksState extends Equatable {
   const RecomendedBooksState();
